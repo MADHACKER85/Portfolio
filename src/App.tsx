@@ -282,10 +282,10 @@ function App() {
                   <p>kkvs5699@gmail.com</p>
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <p>linkedin.com/in/keerthivasank</p>
+                  <p>linkedin.com/in/keerthivasan-k-24586a214</p>
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <p>github.com/keerthivasank</p>
+                  <p>github.com/MADHACKER85</p>
                 </div>
               </div>
             </div>
