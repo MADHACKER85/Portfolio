@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  input,
+  textarea {
+    @apply border-gray-300 rounded-md shadow-sm;
+  }
+}
+
+.tile {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tile:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/*Glow effect for all tiles except skills*/
+.tile::before {
+  content: '';
+  position: absolute;
+  top: -7px; /* Increased for a broader glow */
+  left: -7px; /* Increased for a broader glow */
+  right: -7px; /* Increased for a broader glow */
+  bottom: -7px; /* Increased for a broader glow */
+  background: #00ffff; /* Changed to a brighter color (cyan) */
+  opacity: 0;
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.2s ease; /* Made the transition faster */
+  filter: blur(7px); /* Increased blur for a smoother glow */
+  box-shadow: 0 0 10px #00ffff; /* Added box-shadow for extra brightness */
+}
+
+.tile:hover::before {
+  opacity: 0.9; /* Increased opacity for brighter glow */
+}
+
+/*Specific styling to exclude skills-tile from the glow effect*/
+.skill-tile::before, .skill-tile:hover::before {
+    content: none; /* Remove the pseudo-element */
+    opacity: 0 !important; /* Ensure it's not visible */
+}
+
+.skill-tile {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.skill-tile:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    background-color: #f0f0f0; /* Optional: Change background color on hover if desired */
+}
